@@ -6,10 +6,7 @@ function main() {
 	const chargeTime = document.getElementById("ctime");
 	const dischargeTime = document.getElementById("dtime");
 
-	navigator.getBattery().then((batt) => {
-		console.log(batt)
-		console.log(batt.chargingTime);
-	
+	navigator.getBattery().then((batt) => {	
 		// Initial value setter
 		updateBatStat();
 		updateChargingTime();
@@ -20,7 +17,6 @@ function main() {
 
 		// Listening to charging status event change then update using updateBatStat()
 		batt.addEventListener("chargingchange", () => {
-			console.log(batt.charging)
 			updateBatStat();
 		});
 
